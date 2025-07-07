@@ -15,11 +15,17 @@ How It Works:
 
 -----------------------------------------
 
+Setup instructions:
+1. Install required packages
+2. Create .env file with necessary keys
+3. Run the code (python Rain_Alert_API.py)
+
+-----------------------------------------
+
 This project demonstrates my ability to:
 - Work with APIs (both weather data and SMS)
 - Automate notifications using Python
 - Write clean, simple code for real-world use cases
-
 
 ## Note:
 Sensitive data (API keys, auth_token, phone numbers) are stored in environment variables or a `.env` file (not included for security).

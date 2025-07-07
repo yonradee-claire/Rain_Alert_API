@@ -25,13 +25,16 @@ data = response.json()
 will_rain = False
 dt = None
 
+# Loop through to check weather id, if weather id < 700, it's most likely to rain
 for item in data["list"]:
     weather_id = item["weather"][0]["id"]
-    if weather_id < 700:
+    if weather_id < 700: # weather_id < 700 (mostly 500 indicates rain)
         will_rain = True
-        dt = item["dt_txt"]
+        dt = item["dt_txt"] # description text of weather forecast
         break
 
+# Once the first rain predicted is found, send SMS to remind user that the rain is predicted at
+# XX:XX and don't forget to bring an umbrella
 if will_rain:
     client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
     message = client.messages.create(
